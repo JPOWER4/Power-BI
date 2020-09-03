@@ -1,0 +1,10 @@
+Date Table = CALENDARAUTO(03)
+Day = Day([Date].[Date])
+Day Name = FORMAT([Date].[Date],"DDDD")
+Month No = [Date].[MonthNo]
+Month Name = [Date].[Month]
+Year = [Date].[Year]
+Qtr No = CEILING([Month No],3)/3
+Qtr = "Qtr "& [Qtr No]
+Fy Qtr = IF([Month No]<4,"Qtr 4","Qtr "&[Qtr No]-1)
+FY = if([Month No]<4,"FY "& [Year]-1 & " - " & [Year], "FY "&[Year]&" - "&[Year]+1)
